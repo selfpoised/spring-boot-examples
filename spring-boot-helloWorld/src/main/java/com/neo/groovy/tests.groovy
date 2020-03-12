@@ -1,3 +1,5 @@
+package com.neo.groovy
+
 class Test {
 
     {
