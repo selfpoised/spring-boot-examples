@@ -1,6 +1,7 @@
 package com.neo.controller;
 
 import com.neo.condition.MyInterface;
+import com.neo.my.HelloworldService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController implements ApplicationContextAware {
     private ApplicationContext ap;
+
+    @RequestMapping("/starter")
+    public String index2() {
+        Object o = ap.getBean(HelloworldService.class);
+        return "Hello World";
+    }
 
     @RequestMapping("/forConditions")
     public String index1() {
